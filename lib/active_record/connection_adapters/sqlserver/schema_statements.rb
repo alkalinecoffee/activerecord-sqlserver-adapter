@@ -398,8 +398,8 @@ module ActiveRecord
         def set_identity_insert(table_name, enable = true)
           sql = "SET IDENTITY_INSERT #{table_name} #{enable ? 'ON' : 'OFF'}"
           do_execute sql, 'SCHEMA'
-        rescue Exception
-          raise ActiveRecordError, "IDENTITY_INSERT could not be turned #{enable ? 'ON' : 'OFF'} for table #{table_name}"
+        # rescue Exception
+        #   raise ActiveRecordError, "IDENTITY_INSERT could not be turned #{enable ? 'ON' : 'OFF'} for table #{table_name}"
         end
 
         def identity_column(table_name)
